@@ -34,8 +34,9 @@ def isGreeting(greeting):
     if gTokens[0] in Hs:
         return True
     gBigram = list(bigrams(gTokens))
-    if gBigram[0] == ('whats', 'up'):
-        return True
+    if len(gTokens) >= 2:
+        if gBigram[0] == ('whats', 'up'):
+            return True
     return False
 
 
