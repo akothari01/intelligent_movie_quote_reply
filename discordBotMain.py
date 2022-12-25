@@ -27,14 +27,12 @@ async def on_ready():
 async def on_message(message):
     ctx = await bot.get_context(message)
     if ctx.command in bot.commands:
-        print('here1')
         await bot.process_commands(message)
         return
     if message.author == bot.user:
         return
     text = M.handleMessage(message.content)
     if random.randint(0, 100) <= 20:
-        print('here2')
         await message.channel.send(text)
 
 
