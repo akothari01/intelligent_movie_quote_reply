@@ -16,15 +16,16 @@ def getMaxSentiment(sentiment):
 
 
 def sentimentAnalyzer(sentence):
+    toUseSentence = sentence.lower()
     sentiment = ""
     typeS = "none"
-    if SentenceTypeDetect.isQuestion(sentence):
+    if SentenceTypeDetect.isQuestion(toUseSentence):
         typeS = "question"
-    if SentenceTypeDetect.isGreeting(sentence):
+    if SentenceTypeDetect.isGreeting(toUseSentence):
         typeS = "greeting"
-    if SentenceTypeDetect.isOrder(sentence):
+    if SentenceTypeDetect.isOrder(toUseSentence):
         typeS = "order"
-    sentiment = getMaxSentiment(classifier(sentence))
+    sentiment = getMaxSentiment(classifier(toUseSentence))
     return sentiment, typeS
 
 
