@@ -16,8 +16,3 @@ def handleMessage(inputMessage):
     return txt[2]
 
 
-message = ""
-while message != 'x':
-    message = input("speak your word (x to exit): ")
-    if message != 'x':
-        print(handleMessage(message))
