@@ -2,6 +2,7 @@ import discord
 import Main as M
 import os
 import json
+import random
 
 
 if os.path.exists(os.getcwd() + "/config.json"):
@@ -26,7 +27,8 @@ async def on_message(message):
     if message.author == client.user:
         return
     text = M.handleMessage(message.content)
-    await message.channel.send(text)
+    if random.randint(0, 100) <= 10:
+        await message.channel.send(text)
 
 
 client.run(TOKEN)

@@ -9,7 +9,7 @@ def handleMessage(inputMessage):
     sentiment, typeS = mM.sentimentAnalyzer(inputMessage)
     sf = df.loc[(df['sentiment'] == sentiment) & (df['typeS'] == typeS)]
     if len(sf) == 0:
-        return 'Nothing to say.'
+        return 'yawn'
     sf = sf.sample(n=1)
     txt = sf.values[0]
     txt = txt.tolist()
